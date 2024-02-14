@@ -1,0 +1,26 @@
+{% comment %}
+   action="/user/reg": 当这个表单被提交时，用户输入的数据将会被发送到相对路径 /user/reg。
+   这个路径应该对应于服务器上的一个端点（endpoint），该端点负责处理接收到的表单数据。
+   在 Django 或其他后端框架中，你需要有一个视图（View）或类似的机制来处理指向 /user/reg 的 POST 请求。
+
+    method="post": 这指定了表单数据应该通过 HTTP POST 方法发送。POST 方法通常用于提交表单数据，
+    因为它能够发送大量数据，并且不会将数据显示在 URL 中，这对于包含敏感信息（如密码）的表单来说是必要的。
+
+    总结来说，当用户填写这个表单并提交时，表单中的数据会通过 POST 请求被发送到服务器上的 /user/reg 路径。
+    服务器上对应的处理程序（比如 Django 视图）需要监听这个路径，并对提交的数据进行相应的处理，
+    比如注册新用户、验证数据的有效性等。
+    {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reg_page</title>
+<body>
+<form action="/user/reg" method="post">
+    <p>Username :<input type="text" name="username"></p>
+    <p>Password : <input type="text" name="password_1"></p>
+    <p>Reply Password : <input type="text" name="password_2"></p>
+    <p><input type="submit" value="Register"></p>
+</form>
+</body>
+</html>
