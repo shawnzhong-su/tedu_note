@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+{% if request.session.username %}
+    <p>
+        Welcome to {{ request.session.username }}
+    </p>
+
+    <p>
+        <a href="/user/logout">Log out</a>
+    </p>
+    <p>
+        <a href="/index/">Enter My notes</a>
+    </p>
+{% else %}
+    {% if request.COOKIES.username %}
+        <p>
+            <a href="/user/logout">Log out</a>
+        </p>
+        <p>
+            <a href="/index/">Enter My notes</a>
+        </p>
+    {% else %}
+        <p>
+            <a href="/user/login">Log in</a>
+        </p>
+        <p>
+            <a href="/user/reg">reg</a>
+        </p>
+    {% endif %}
+{% endif %}
+
+</body>
+</html>
